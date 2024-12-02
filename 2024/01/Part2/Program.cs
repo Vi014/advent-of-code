@@ -12,13 +12,19 @@ foreach (var line in lines)
     right.Add(Convert.ToInt32(matches[1].Value));
 }
 
-left.Sort();
-right.Sort();
 var sum = 0;
 
 for (var i = 0; i < left.Count; i++)
 {
-    sum += Math.Abs(left.ElementAt(i) - right.ElementAt(i));
+    var similarity = 0;
+    for (var j = 0; j < right.Count; j++)
+    {
+        if (left[i] == right[j])
+        {
+            similarity++;
+        }
+    }
+    sum += left[i] * similarity;
 }
 
 Console.WriteLine($"{sum}");
