@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using System.Threading.Channels;
 
 var lines = File.ReadAllLines("input");
 var regex = new Regex(@"mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\)");
